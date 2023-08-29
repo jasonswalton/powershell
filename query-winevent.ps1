@@ -1,0 +1,14 @@
+# Creating Get-WinEvent queries with FilterHashtable
+
+# There are inefficient *DO NOT USE*
+Get-EventLog -LogName Application | Where-Object Source -Match defrag
+
+Get-WinEvent -LogName Application | Where-Object { $_.ProviderName -Match 'defrag' }
+
+# Use FilerHashtable instead
+Get-WinEvent -FilterHashtable @{
+   LogName='Application'
+   ProviderName='*defrag'
+}
+
+https://learn.microsoft.com/en-us/powershell/scripting/samples/creating-get-winevent-queries-with-filterhashtable?view=powershell-7.3
