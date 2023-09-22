@@ -1,4 +1,5 @@
 # Collecting information about computers
+# https://learn.microsoft.com/en-us/powershell/scripting/samples/collecting-information-about-computers?view=powershell-7.3
 
 # Listing desktop settings
 Get-CimInstance -ClassName Win32_Desktop
