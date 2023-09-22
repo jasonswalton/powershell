@@ -1,5 +1,5 @@
 # Delete local profiles from a Windows OS
-# TODO create a module
+# TODO create a cmdlet
 
 $UserProfiles = Get-CimInstance Win32_UserProfile -Filter 'Special = False AND Loaded = False'
 
